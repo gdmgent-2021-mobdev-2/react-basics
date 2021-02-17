@@ -23,8 +23,6 @@ const Les1 = () => {
 
     const count = filteredStudents.length;
 
-    console.log("render");
-
     return (
         <>
             <Intro title={title} />

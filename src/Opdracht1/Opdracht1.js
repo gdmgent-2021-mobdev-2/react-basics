@@ -40,15 +40,13 @@ const Item = ({ name, img, number, present, onClick }) => {
 
 const List = (onStudentClick) => {
     return (
-        <main className="container">
-            <ul className="student-list">
-                {students.map((student) => (
-                    <Item key={student.number}
-                          onClick={onStudentClick}
-                          {...student} />
-                ))}
-            </ul>
-        </main>
+        <ul className="student-list">
+            {students.map((student) => (
+                <Item key={student.number}
+                      onClick={onStudentClick}
+                      {...student} />
+            ))}
+        </ul>
     );
 };
 
