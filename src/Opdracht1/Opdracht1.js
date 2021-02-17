@@ -38,7 +38,7 @@ const Item = ({ name, img, number, present, onClick }) => {
     );
 }
 
-const List = (onStudentClick) => {
+const List = ({ onStudentClick }) => {
     return (
         <ul className="student-list">
             {students.map((student) => (
@@ -51,7 +51,7 @@ const List = (onStudentClick) => {
 };
 
 const Opdracht1 = () => {
-    const title = "Les 1";
+    const title = "Opdracht 1";
 
     const handlePrevClick = () => {
         window.alert("prev");

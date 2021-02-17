@@ -5,6 +5,8 @@ import App from './App';
 
 // JSX
 ReactDOM.render(
-    <App />,
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
     document.getElementById('root')
 );

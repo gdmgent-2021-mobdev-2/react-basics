@@ -22,6 +22,39 @@ code {
   margin: 2rem auto;
 }
 
+.navbar {
+  display: flex;
+}
+
+.navbar li {
+  list-style-type: none;
+}
+
+.navbar li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.navbar li.active button {
+  font-weight: bold;
+}
+
+.intro {
+  background: #eee;
+  border-radius: 0.5rem;
+  padding: 0.2rem 1rem;
+}
+
+.intro h1 {
+  margin-bottom: 0;
+}
+
+.intro h1 + p {
+  margin-top: 0.5rem;
+}
+
 .info {
   border-radius: 0.5rem;
   background: #eee;
@@ -55,3 +88,4 @@ ul {
 .student__badge.student__badge--absent {
   background: rgba(255, 0, 0, 0.2);
 }
+
