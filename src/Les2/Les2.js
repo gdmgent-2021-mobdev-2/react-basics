@@ -1,25 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Intro from '../Shared/Intro';
-import Info from './Components/Info';
-import students from '../data/students';
-import Item from './Components/Item';
+import StudentsOverview from './Components/StudentsOverview';
+
 
 const Les2 = () => {
     // state
-    const [ showPresent, setShowPresent ] = useState(true);
+    const [ students, setStudents ] = useState();
+    const [ error, setError ] = useState();
 
-    const onStudentClick = (name) => {
-        window.alert(name);
-    }
+    useEffect(() => {
+        let isCurrent = true;
 
-    const handleToggleClick = () => {
-        setShowPresent(!showPresent);
-    };
+        fetch('/data/students.json')
+            .then((response) => response.json())
+            .then((data) => {
+                if (isCurrent) {
+                    setStudents(data);
+                }
+            })
+            .catch((e) => {
+                if (isCurrent) {
+                    setError(String(e));
+                }
+            });
 
-    const filteredStudents = showPresent ?
-        students.filter((student) => student.present) : students;
+        return () => {
+            isCurrent = false;
+        };
+    }, []);
 
-    const count = filteredStudents.length;
+    const isLoading = !students && !error;
 
     return (
         <>
@@ -28,21 +38,17 @@ const Les2 = () => {
                 description="useState en useEffect"
                 />
 
-            <button onClick={handleToggleClick}>Toggle</button>
             {
-                showPresent ?
-                    <h2>Aanwezige studenten</h2> :
-                    <h2>Alle studenten</h2>
+                error && <p className="error">{error}</p>
             }
-            <Info><span>Totaal studenten: {count}</span></Info>
-            <ul>
-                { filteredStudents.map((student) => (
-                    <Item
-                        onItemClick={onStudentClick}
-                        {...student}
-                        key={student.number} />
-                )) }
-            </ul>
+
+            {
+                isLoading && <p>Loading</p>
+            }
+
+            {
+                students && <StudentsOverview students={students} />
+            }
         </>
     );
 };

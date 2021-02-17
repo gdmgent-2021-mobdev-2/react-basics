@@ -53,7 +53,7 @@ const Pagination = ({ currentPage, max, onClick }) => {
     let array = [];
     for (let i = 1; i <= max; i++) {
         array.push(
-            <li className={currentPage === i ? 'active' : ''}>
+            <li key={i} className={currentPage === i ? 'active' : ''}>
                 <Button onClick={() => onClick(i)}>{i}</Button>
             </li>
         )

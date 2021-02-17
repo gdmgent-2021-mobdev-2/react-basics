@@ -89,3 +89,9 @@ ul {
   background: rgba(255, 0, 0, 0.2);
 }
 
+.error {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background: rgba(255, 0, 0, 0.2);
+  color: red;
+}
