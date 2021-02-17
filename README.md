@@ -1,4 +1,4 @@
-# Getting Started with Create React Les1
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React Les1](https://github.com/facebook/create-react-app).
 
