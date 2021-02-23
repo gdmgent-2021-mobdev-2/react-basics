@@ -1,0 +1,21 @@
+.les3 li {
+    list-style-type: none;
+    padding: 0.25rem;
+}
+
+.les3 {
+    display: flex;
+    align-items: flex-start;
+}
+
+.les3 .sidebar {
+    width: 40%;
+    padding: 0;
+    margin: 0;
+}
+
+.les3 .main {
+    width: 60%;
+    padding: 0.5rem 1rem;
+    background: #eee;
+}

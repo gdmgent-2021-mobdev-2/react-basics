@@ -3,6 +3,8 @@ import Opdracht1 from './Opdracht1/Opdracht1';
 import { useState, useEffect } from 'react';
 import Les2 from './Les2/Les2';
 import Opdracht2 from './Opdracht2/Opdracht2';
+import Opdracht3 from './Opdracht3/Opdracht3';
+import Les3 from './Les3/Les3';
 
 const pages = [{
     key: 'les1',
@@ -16,6 +18,12 @@ const pages = [{
 }, {
     key: 'opdracht2',
     title: 'Opdracht 2',
+}, {
+    key: 'opdracht3',
+    title: 'Opdracht 3',
+}, {
+    key: 'les3',
+    title: 'Les 3',
 }];
 
 const KEY_INDEX = 'current_page';
@@ -52,6 +60,10 @@ const App = () => {
                 return <Les2 />;
             case 'opdracht2':
                 return <Opdracht2 />;
+            case 'opdracht3':
+                return <Opdracht3 />;
+            case 'les3':
+                return <Les3 />;
             default:
                 return null;
         }
