@@ -10,7 +10,7 @@ const useGithubData = (username) => {
     const [error, setError] = useState();
 
     // 1e keer runnen on start (bij aanmaken component)
-    // Vanaf dan elke keer indien student wijzigt
+    // Vanaf dan elke keer indien username wijzigt
     useEffect(() => {
         setData(null);
         setError(null);
