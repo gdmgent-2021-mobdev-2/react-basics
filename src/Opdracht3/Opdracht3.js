@@ -21,7 +21,9 @@ const Students = ({ onStudentClick }) => {
             .then((data) => isCurrent && setStudents(data))
             .catch((e) => isCurrent && setError(String(e)));
 
-        return () => isCurrent = false;
+        return () => {
+            isCurrent = false;
+        }
     }, []);
 
 

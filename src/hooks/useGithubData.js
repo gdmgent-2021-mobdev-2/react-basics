@@ -26,7 +26,7 @@ const useGithubData = (username) => {
                 .then((data) => isCurrent && setData(data))
                 .catch((error) => isCurrent && setError(String(error)));
 
-            return () => isCurrent = false;
+            return () => (isCurrent = false);
         } else {
             setError('Github username is empty');
         }

@@ -16,6 +16,14 @@ const Students = ({ onStudentClick }) => {
         );
     }
 
+    if (error) {
+        return (
+            <section>
+                <p>{ error }</p>
+            </section>
+        )
+    }
+
     return (
         <ul className="sidebar">
             {students.map((student) => (
@@ -37,7 +45,7 @@ const Item = ({ student, onClick }) => {
     );
 }
 
-const Opdracht3 = () => {
+const Les3 = () => {
     const [activeStudent, setActiveStudent] = useState();
 
     const { data, error, isLoading } = useGithubData("yungpanda");
@@ -67,4 +75,4 @@ const Opdracht3 = () => {
 
 };
 
-export default Opdracht3;
+export default Les3;
