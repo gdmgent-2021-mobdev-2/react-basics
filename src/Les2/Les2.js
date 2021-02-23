@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Intro from '../Shared/Intro';
 import StudentsOverview from './Components/StudentsOverview';
 
-
 const Les2 = () => {
     // state
     const [ students, setStudents ] = useState();
@@ -11,20 +10,22 @@ const Les2 = () => {
     useEffect(() => {
         let isCurrent = true;
 
+        // fetch students
         fetch('/data/students.json')
             .then((response) => response.json())
-            .then((data) => {
-                if (isCurrent) {
-                    setStudents(data);
-                }
-            })
+            // shorter isCurrent
+            .then((data) => isCurrent && setStudents(data))
+            // longer isCurrent
             .catch((e) => {
                 if (isCurrent) {
                     setError(String(e));
                 }
             });
 
+        // return "destroy" function
         return () => {
+            // inside destroy function, so react called our function
+            // react wants to destroy useEffect, set isCurrent false for async fetch
             isCurrent = false;
         };
     }, []);

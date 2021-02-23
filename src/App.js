@@ -20,12 +20,15 @@ const pages = [{
 
 const KEY_INDEX = 'current_page';
 
+const getInitialIndex = () => {
+    if (localStorage.getItem(KEY_INDEX) !== null) {
+        return parseInt(localStorage.getItem(KEY_INDEX));
+    }
+    return 0;
+};
+
 const App = () => {
-    const [index, setIndex] = useState(
-        localStorage.getItem(KEY_INDEX) !== null ?
-            parseInt(localStorage.getItem(KEY_INDEX)) :
-            0
-    );
+    const [index, setIndex] = useState(getInitialIndex());
 
     const handlePageClick = (index) => {
         setIndex(index);
