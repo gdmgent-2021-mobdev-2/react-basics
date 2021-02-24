@@ -1,0 +1,8 @@
+$body-bg: #eee;
+$primary: #10d7c6;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+@import 'generic';
+@import 'Les4/Les4';

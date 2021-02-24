@@ -5,6 +5,7 @@ import Les2 from './Les2/Les2';
 import Opdracht2 from './Opdracht2/Opdracht2';
 import Opdracht3 from './Opdracht3/Opdracht3';
 import Les3 from './Les3/Les3';
+import Les4 from './Les4/Les4';
 
 const pages = [{
     key: 'les1',
@@ -24,6 +25,9 @@ const pages = [{
 }, {
     key: 'les3',
     title: 'Les 3',
+}, {
+    key: 'les4',
+    title: 'Les 4',
 }];
 
 const KEY_INDEX = 'current_page';
@@ -64,6 +68,8 @@ const App = () => {
                 return <Opdracht3 />;
             case 'les3':
                 return <Les3 />;
+            case 'les4':
+                return <Les4 />;
             default:
                 return null;
         }

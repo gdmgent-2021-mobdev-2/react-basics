@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    max-width: 60rem;
+    margin: 2rem auto;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar li {
+    list-style-type: none;
+}
+
+.navbar li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.navbar li.active button {
+    font-weight: bold;
+}
+
+.intro {
+    background: #eee;
+    border-radius: 0.5rem;
+    padding: 0.2rem 1rem;
+}
+
+.intro h1 {
+    margin-bottom: 0;
+}
+
+.intro h1 + p {
+    margin-top: 0.5rem;
+}
+
+.info {
+    border-radius: 0.5rem;
+    background: #eee;
+    padding: 0.5rem;
+}
+
+ul {
+    padding: 0;
+}
+
+.student {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0.5rem 0;
+}
+.student img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.student__badge {
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    margin-left: auto;
+    background: rgba(0, 255, 0, 0.2);
+}
+
+.student__badge.student__badge--absent {
+    background: rgba(255, 0, 0, 0.2);
+}

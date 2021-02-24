@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// CSS
+// import './index.css';
+// SCSS / SASS
+import './app.scss';
 import App from './App';
 
 // JSX

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 const useStudents = () => {
-
     const [students, setStudents] = useState();
     const [error, setError] = useState();
 
@@ -23,6 +22,7 @@ const useStudents = () => {
         students,
         error,
         isLoading,
+        setStudents,
     }
 
 };
